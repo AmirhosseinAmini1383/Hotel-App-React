@@ -31,6 +31,7 @@ function Header() {
       };
     });
   };
+
   const dateRangeRef = useRef();
   useOutsideClick(dateRangeRef, "dateDropDown", () => setOpenDate(false));
   return (

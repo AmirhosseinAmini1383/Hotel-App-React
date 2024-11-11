@@ -373,3 +373,12 @@ a.active {
   width: 1.1rem;
   height: 1.1rem;
 }
+
+.loading-message {
+  color: var(--slate-300);
+  flex: 1;
+  display: flex;
+}
+.loading-message p {
+  margin-right: 0.5rem;
+}
