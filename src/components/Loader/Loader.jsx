@@ -4,7 +4,9 @@ function Loader() {
   return (
     <div className="loading-message">
       <p>Loading Data ...</p>
-      <LoaderIcon style={{ width: "1.3rem", height: "1.3rem" }} />
+      <LoaderIcon
+        style={{ width: "1.3rem", height: "1.3rem", color: "--primary-700" }}
+      />
     </div>
   );
 }
