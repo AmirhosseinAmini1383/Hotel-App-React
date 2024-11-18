@@ -1368,6 +1368,87 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "countryCode": "ES",
+      "latitude": "40.45611541392859",
+      "longitude": "-3.6256599426269536",
+      "host_location": "Madrid Spain",
+      "id": 9
+    },
+    {
+      "cityName": "Isfahan",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "32.58732068091373",
+      "longitude": "51.65771484375001",
+      "host_location": "Isfahan Iran (Islamic Republic of)",
+      "id": 10
+    },
+    {
+      "cityName": "Tehran",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "35.69634053686435",
+      "longitude": "51.48193359375001",
+      "host_location": "Tehran Iran (Islamic Republic of)",
+      "id": 11
+    },
+    {
+      "cityName": "Tehran",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "35.63545269641548",
+      "longitude": "51.390888690948486",
+      "host_location": "Tehran Iran (Islamic Republic of)",
+      "id": 12
+    },
+    {
+      "cityName": "Tapaua",
+      "country": "Brazil",
+      "countryCode": "BR",
+      "latitude": "-5.687049836049687",
+      "longitude": "-66.79687500000001",
+      "host_location": "Tapaua Brazil",
+      "id": 13
+    },
+    {
+      "cityName": "Chicago",
+      "country": "United States of America (the)",
+      "countryCode": "US",
+      "latitude": "41.842966567859406",
+      "longitude": "-87.626953125",
+      "host_location": "Chicago United States of America (the)",
+      "id": 14
+    },
+    {
+      "cityName": "Riviere-Mouchalagane",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": "52.395715477302105",
+      "longitude": "-69.78515625000001",
+      "host_location": "Riviere-Mouchalagane Canada",
+      "id": 15
+    },
+    {
+      "cityName": "Canada Ombu",
+      "country": "Argentina",
+      "countryCode": "AR",
+      "latitude": "-28.275358281817095",
+      "longitude": "-60.29296875000001",
+      "host_location": "Canada Ombu Argentina",
+      "id": 16
+    },
+    {
+      "cityName": "Mabel Creek",
+      "country": "Australia",
+      "countryCode": "AU",
+      "latitude": "-29.171348850951507",
+      "longitude": "134.29687500000003",
+      "host_location": "Mabel Creek Australia",
+      "id": 17
     }
   ]
 }

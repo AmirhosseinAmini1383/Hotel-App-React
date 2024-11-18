@@ -3,8 +3,8 @@ import useUrlLocation from "../../hooks/useUrlLocation";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../Loader/Loader";
-import toast from "react-hot-toast";
 import ReactCountryFlag from "react-country-flag";
+import { useBookmark } from "../context/BookmarkListContext";
 
 // function getFlagEmoji(countryCode) {
 //   const codePoints = countryCode
@@ -23,6 +23,7 @@ function AddNewBookmark() {
   const [countryCode, setCountryCode] = useState("");
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
   const [geoCodingError, setGeoCodingError] = useState(null);
+  const { createBookmarks } = useBookmark();
 
   useEffect(() => {
     if (!latitude || !longitude) return;
@@ -49,14 +50,32 @@ function AddNewBookmark() {
     }
     getLocationData();
   }, [latitude, longitude]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!cityName || !country) return;
+    const newBookmark = {
+      cityName,
+      country,
+      countryCode,
+      latitude,
+      longitude,
+      host_location: cityName + " " + country,
+    };
+    await createBookmarks(newBookmark);
+    navigate("/bookmark");
+  };
+
   if (isLoadingGeoCoding) return <Loader />;
   if (geoCodingError) return <strong>{geoCodingError}</strong>;
   return (
     <div>
-      <h2>Bookmark New Location</h2>
-      <form className="form">
+      <h2 style={{ marginBottom: "20px" }}>Bookmark New Location</h2>
+      <form className="form" onSubmit={handleSubmit}>
         <div className="formControl">
-          <label htmlFor="cityName">CityName</label>
+          <label style={{ marginBottom: "5px" }} htmlFor="cityName">
+            CityName
+          </label>
           <input
             value={cityName}
             onChange={(e) => setCityName(e.target.value)}
@@ -66,7 +85,9 @@ function AddNewBookmark() {
           />
         </div>
         <div className="formControl">
-          <label htmlFor="country">Country</label>
+          <label style={{ marginBottom: "5px" }} htmlFor="country">
+            Country
+          </label>
           <input
             value={country}
             onChange={(e) => setCountry(e.target.value)}

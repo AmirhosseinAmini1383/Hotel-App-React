@@ -1,25 +1,52 @@
-import { createContext, useContext, useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
 const BookmarkContext = createContext();
-const BASE_URL = "http://localhost:5000/bookmarks";
+const BASE_URL = "http://localhost:5000";
 function BookmarkListProvider({ children }) {
   const [currentBookmark, setCurrentBookmark] = useState(null);
-  const [isLoadingCurrentBookmark, setIsLoadingCurrentBookmark] =
-    useState(false);
-  const { data: bookmarks, isLoading } = useFetch(`${BASE_URL}`);
+  const [isLoading, setIsLoading] = useState(false);
+  const [bookmarks, setBookmarks] = useState([]);
+
+  useEffect(() => {
+    async function fetchBookmarkList() {
+      setIsLoading(true);
+      try {
+        const { data } = await axios.get(`${BASE_URL}/bookmarks`);
+        setBookmarks(data);
+      } catch (error) {
+        toast.error(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchBookmarkList();
+  }, []);
 
   async function getSingleBookmarks(id) {
-    setIsLoadingCurrentBookmark(true);
+    setIsLoading(true);
+    setCurrentBookmark(null);
     try {
-      const { data } = await axios.get(`${BASE_URL}/${id}`);
+      const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBookmark(data);
     } catch (error) {
       toast.error(error.message);
     } finally {
-      setIsLoadingCurrentBookmark(false);
+      setIsLoading(false);
+    }
+  }
+
+  async function createBookmarks(newBookmark) {
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(`${BASE_URL}/bookmarks`, newBookmark);
+      setCurrentBookmark(data);
+      setBookmarks((prev) => [...prev, data]);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -30,7 +57,7 @@ function BookmarkListProvider({ children }) {
         isLoading,
         getSingleBookmarks,
         currentBookmark,
-        isLoadingCurrentBookmark,
+        createBookmarks,
       }}
     >
       {children}
