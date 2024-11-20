@@ -1323,5 +1323,96 @@
       ]
     }
   ],
-  "bookmarks": []
+  "bookmarks": [
+    {
+      "cityName": "Amsterdam",
+      "country": "Netherlands (Kingdom of the)",
+      "countryCode": "NL",
+      "latitude": "52.37081758797136",
+      "longitude": "4.894409179687501",
+      "host_location": "Amsterdam Netherlands (Kingdom of the)",
+      "id": 1
+    },
+    {
+      "cityName": "Tehran",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "35.63546141617361",
+      "longitude": "51.390851140022285",
+      "host_location": "Tehran Iran (Islamic Republic of)",
+      "id": 2
+    },
+    {
+      "cityName": "Bayingolin Mongol Zizhizhou",
+      "country": "China",
+      "countryCode": "CN",
+      "latitude": "42.62991729384455",
+      "longitude": "87.89062500000001",
+      "host_location": "Bayingolin Mongol Zizhizhou China",
+      "id": 3
+    },
+    {
+      "cityName": "Strathcona County",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": "53.409531853086435",
+      "longitude": "-113.20312500000001",
+      "host_location": "Strathcona County Canada",
+      "id": 4
+    },
+    {
+      "cityName": "Claude",
+      "country": "United States of America (the)",
+      "countryCode": "US",
+      "latitude": "34.994003757575776",
+      "longitude": "-101.25000000000001",
+      "host_location": "Claude United States of America (the)",
+      "id": 5
+    },
+    {
+      "cityName": "Jaragua",
+      "country": "Brazil",
+      "countryCode": "BR",
+      "latitude": "-15.834535741221552",
+      "longitude": "-49.21875000000001",
+      "host_location": "Jaragua Brazil",
+      "id": 6
+    },
+    {
+      "cityName": "Anmatjere",
+      "country": "Australia",
+      "countryCode": "AU",
+      "latitude": "-22.075459351546858",
+      "longitude": "132.89062500000003",
+      "host_location": "Anmatjere Australia",
+      "id": 7
+    },
+    {
+      "cityName": "Kish",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "26.767069784218428",
+      "longitude": "53.272705078125",
+      "host_location": "Kish Iran (Islamic Republic of)",
+      "id": 8
+    },
+    {
+      "cityName": "Qahan",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.72468694762183",
+      "longitude": "50.26157140731812",
+      "host_location": "Qahan Iran (Islamic Republic of)",
+      "id": 9
+    },
+    {
+      "cityName": "Yelbarga",
+      "country": "India",
+      "countryCode": "IN",
+      "latitude": "15.723526226324188",
+      "longitude": "76.28906250000001",
+      "host_location": "Yelbarga India",
+      "id": 10
+    }
+  ]
 }
