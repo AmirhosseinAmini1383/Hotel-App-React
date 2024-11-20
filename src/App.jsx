@@ -12,28 +12,33 @@ import BookmarkListProvider from "./components/context/BookmarkListContext";
 import BookMark from "./components/BookMark/BookMark";
 import SingleBookmark from "./components/SingleBookmark/SingleBookmark";
 import AddNewBookmark from "./components/AddNewBookmark/AddNewBookmark";
+import Login from "./components/Login/Login";
+import AuthProvider from "./components/context/AuthProvider";
 
 function App() {
   return (
     <div>
-      <BookmarkListProvider>
-        <HotelsProvider>
-          <Toaster />
-          <Header />
-          <Routes>
-            <Route path="/" element={<LocationList />} />
-            <Route path="/hotels" element={<AppLayout />}>
-              <Route index element={<Hotels />} />
-              <Route path=":id" element={<SingleHotel />} />
-            </Route>
-            <Route path="/bookmark" element={<BookmarkLayout />}>
-              <Route index element={<BookMark />} />
-              <Route path=":id" element={<SingleBookmark />} />
-              <Route path="add" element={<AddNewBookmark />} />
-            </Route>
-          </Routes>
-        </HotelsProvider>
-      </BookmarkListProvider>
+      <AuthProvider>
+        <BookmarkListProvider>
+          <HotelsProvider>
+            <Toaster />
+            <Header />
+            <Routes>
+              <Route path="/" element={<LocationList />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/hotels" element={<AppLayout />}>
+                <Route index element={<Hotels />} />
+                <Route path=":id" element={<SingleHotel />} />
+              </Route>
+              <Route path="/bookmark" element={<BookmarkLayout />}>
+                <Route index element={<BookMark />} />
+                <Route path=":id" element={<SingleBookmark />} />
+                <Route path="add" element={<AddNewBookmark />} />
+              </Route>
+            </Routes>
+          </HotelsProvider>
+        </BookmarkListProvider>
+      </AuthProvider>
     </div>
   );
 }
